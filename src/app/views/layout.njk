@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        {% block head %}
+            <title>Lauchstore</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/css/styles-body.css">
+        <link rel="stylesheet" href="/css/style-header-footer.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        {% include "parts/header.njk" %}
+
+        {% block content %}{% endblock %}
+
+        {% include "parts/footer.njk" %}
+
+        <script src="/js/script.js"></script>        
+    </body>
+</html>
