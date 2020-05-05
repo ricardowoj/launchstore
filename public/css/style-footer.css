@@ -1,9 +1,4 @@
-@import './style-base.css';
-
-html, body {
-    min-height: 100vh;
-    background-color: #f9f9f9;
-}
+@import './style-global.css';
 
 header, footer {
     background-color: black;
@@ -11,34 +6,4 @@ header, footer {
     width: 100%;
     padding: 32px 0;
     text-align: center;
-}
-
-header div.container {
-    display: grid;
-    grid-template-columns: 220px auto 280px;
-    align-items: center;
-    grid-gap: 24px;
-}
-
-header div.container a {
-    justify-self: start;
-}
-
-/* logo Lauchstore */
-.logo h1 {
-    color: white;
-    font-size: 36px;
-    line-height: 46px;
-}
-
-.logo h2 {
-    color: var(--primary-color);
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 2px;
-}
-
-/* header search */
-.search input {
-    width: 100%;
 }

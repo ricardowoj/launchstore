@@ -1,4 +1,4 @@
-@import './style-base.css';
+@import './style-global.css';
 
 html, body {
     min-height: 100vh;
@@ -41,4 +41,30 @@ header div.container a {
 /* header search */
 .search input {
     width: 100%;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+/* primary menu */
+nav.primary ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav.primary ul li a {
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    transition: 300ms;
+}
+
+nav.primary ul li a:hover {
+    color: var(--primary-color)
+}
+
+nav.primary ul li a i {
+    margin-right: 8px;
 }
