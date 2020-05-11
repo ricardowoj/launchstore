@@ -45,7 +45,8 @@ const PhotosUpload = {
         PhotosUpload.getAllFiles()
     },
     hasLimit(event) {
-        const { uploadLimit, input: fileList } = PhotosUpload
+        const { uploadLimit, input, preview } = PhotosUpload
+        const { files: fileList } = input
 
         if (fileList.length > uploadLimit) {
             alert(`Envie no máximo ${uploadLimit} fotos`)
@@ -56,7 +57,7 @@ const PhotosUpload = {
         const photosDiv = []
         preview.childNodes.forEach(item => {
             if (item.classList && item.classList.value == "photo")
-            photoDiv.push(item)
+            photosDiv.push(item)
         })
 
         const totalPhotos = fileList.length + photosDiv.length
@@ -100,6 +101,17 @@ const PhotosUpload = {
         
         PhotosUpload.files.splice(index, 1)
         PhotosUpload.input;files = PhotosUpload.getAllFiles()
+        photoDiv.remove()
+    },
+    removeOldPhoto(event) {
+        const photoDiv = event.target.parentNode
+
+        if(photoDiv.id) {
+            const removedFiles = document.querySelector('input[name="removed_files"')
+            if (removedFiles) {
+                removedFiles.value += `${photoDiv.id},`
+            }
+        }
         photoDiv.remove()
     }
 }
