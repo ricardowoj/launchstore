@@ -5,7 +5,26 @@
 <section class="product-single">
 
     <div class="gallery">
-        <img src="https://www.efacil.com.br/wcsstore/ExtendedSitesCatalogAssetStore/Imagens/1000/CAG3590W20102BR-00002_01.jpg" />
+        <div class="highlight">
+            {% if not files[0] %}
+            <img src="https://lh3.googleusercontent.com/proxy/PEX30YgZK3y4MLY8LLp432avRYILeptz043-pSdwWiOq5JrzzA7EmG3zZXsjTSCdH018Uq3xEIuhPjNHQneXNXJjy1B0ko8lApzJwyguqN-2N6f4Z5ne8u5w_QcVHMn-BsxD7Gf_bJj-FaeOIKjvN_s-sMOw620zr31x3CQE5eEE4ZK06-6LdVmAXUO2vrlnA_FlXgrVcxoY" />
+            {% else %}
+            <img src="{{files[0].src}}" alt="{{files[0].name}}">
+            {% endif %}
+        </div>
+        <div class="gallery-preview">
+            {%for image in files %}
+                <img 
+                    src="{{ image.src }}" 
+                    alt="{{ image.name }}"
+                    {% if loop.index0 == 0 %}
+                        class="active"
+                    {% endif %}
+                    onclick="ImageGallery.setImage(event)"
+                >
+            {% endfor %}
+        </div>
+        
     </div>
 
     <div class="info">
